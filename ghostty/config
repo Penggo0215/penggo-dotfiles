@@ -1,0 +1,84 @@
+# ============================================
+# Ghostty Terminal - Complete Configuration
+# ============================================
+
+# --- Typography ---
+font-family = "JetBrainsMono Nerd Font"
+font-family = "PingFang SC"
+font-size = 15.5
+font-thicken = true
+adjust-cell-height = 6
+
+# --- Theme and Colors ---
+theme = Gruvbox Material Dark
+
+# --- Window and Appearance ---
+# background-image = "/Users/penggo/Documents/penggo/图片/E42260A6-C452-42BB-BF03-1A29424FA823_1_105_c.jpeg"
+# background-image-fit = cover
+# background-image-position = center
+# background-image-opacity = 0.06
+# background-opacity = 0.98
+# background-blur-radius = 30 # 注释掉毛玻璃效果，因为在 macOS 上快速打字时它会严重导致掉帧卡顿
+
+macos-titlebar-proxy-icon = hidden
+window-padding-x = 10
+window-padding-y = 8
+window-save-state = always
+window-colorspace = display-p3
+# 让终端内容在窗口中自动居中对齐，视觉上更舒适
+window-padding-balance = true
+
+# --- Cursor ---
+cursor-style-blink = true
+cursor-opacity = 0.8
+adjust-cursor-thickness = 2
+mouse-scroll-multiplier = 2
+
+# --- Cursor Shaders (拖影效果) ---
+custom-shader = shaders/in-game-crt-cursor.glsl
+custom-shader-animation = always
+
+
+
+# --- Mouse ---
+mouse-hide-while-typing = true
+
+# --- Quick Terminal (Quake-style dropdown) ---
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0.15
+
+# --- Close behavior ---
+confirm-close-surface = true
+
+# --- Security ---
+auto-update = check
+
+# --- Shell Integration ---
+shell-integration-features = cursor,sudo,no-title,ssh-env,ssh-terminfo,path
+
+# --- Keybindings ---
+# Tabs
+keybind = cmd+shift+left=previous_tab
+keybind = cmd+shift+right=next_tab
+
+
+# Quick terminal global hotkey
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# --- 基础分屏（左右添加屏幕）---
+keybind = cmd+l=new_split:left
+keybind = cmd+shift+f=toggle_split_zoom
+
+# --- Claude 专属优化 ---
+quit-after-last-window-closed = true
+notify-on-command-finish = always
+
+
+# --- Performance ---
+scrollback-limit = 25000000
+
+
+# --- 自定义 Dock 图标样式 ---
+macos-icon = custom
+macos-custom-icon = "/Users/penggo/Library/Application Support/com.mitchellh.ghostty/icon.icns"
+
