@@ -31,4 +31,12 @@ return {
       },
     },
   },
+
+  -- 在状态栏显示文件大小 (filesize)
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      table.insert(opts.sections.lualine_x, 1, "filesize")
+    end,
+  },
 }

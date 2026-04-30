@@ -7,7 +7,7 @@ font-family = "JetBrainsMono Nerd Font"
 font-family = "PingFang SC"
 font-size = 15.5
 font-thicken = true
-adjust-cell-height = 6
+adjust-cell-height = 2
 
 # --- Theme and Colors ---
 theme = Gruvbox Material Dark

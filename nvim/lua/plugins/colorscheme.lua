@@ -3,6 +3,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     opts = {
+      transparent_mode = true,
       contrast = "medium",
       italic = {
         strings = false,
@@ -11,6 +12,11 @@ return {
         folds = false,
       },
       overrides = {
+        -- 使全局状态栏和命令行背景透明，消除空白时的底边框
+        StatusLine = { bg = "NONE" },
+        StatusLineNC = { bg = "NONE" },
+        MsgArea = { bg = "NONE" },
+        
         -- 基础语法
         Comment = { fg = "#928374", italic = false },
         ["@comment"] = { fg = "#928374", italic = false },
@@ -70,4 +76,3 @@ return {
     },
   },
 }
-
