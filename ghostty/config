@@ -80,5 +80,5 @@ scrollback-limit = 25000000
 
 # --- 自定义 Dock 图标样式 ---
 macos-icon = custom
-macos-custom-icon = "/Users/penggo/Library/Application Support/com.mitchellh.ghostty/icon.icns"
+macos-custom-icon = /Users/penggo/dotfiles/ghostty/gruvbox-hard.icns
 
