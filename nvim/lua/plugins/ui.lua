@@ -32,11 +32,17 @@ return {
     },
   },
 
-  -- 在状态栏显示文件大小 (filesize)
+  -- 在状态栏显示文件大小，并将大箭头替换为小箭头
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      -- 插入文件大小组件
       table.insert(opts.sections.lualine_x, 1, "filesize")
+
+      -- 使用小巧的箭头（Nerd Fonts）替换巨大的默认箭头
+      -- 为右侧的箭头添加一个空格，防止它和文字挤在一起导致显示异常
+      opts.options.section_separators = { left = "", right = " " }
+      opts.options.component_separators = { left = "", right = " " }
     end,
   },
 }
