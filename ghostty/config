@@ -61,6 +61,9 @@ shell-integration-features = cursor,sudo,no-title,ssh-env,ssh-terminfo,path
 keybind = cmd+shift+left=previous_tab
 keybind = cmd+shift+right=next_tab
 
+# Newline
+keybind = shift+enter=text:\n
+
 
 # Quick terminal global hotkey
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
