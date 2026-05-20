@@ -1,0 +1,35 @@
+" -----------------------------------------------------------------------------
+" Penggo's Vim Fallback Config
+" -----------------------------------------------------------------------------
+" 注意：由于你的主配置是基于 Lua 的 Neovim 配置，Vim 无法完全直接运行。
+" 这个文件提供基础的编辑器设置，建议优先使用 'nvim' 命令。
+
+set nocompatible
+filetype plugin indent on
+syntax on
+
+" 基础设置
+set number          " 显示行号
+set relativenumber  " 相对行号
+set mouse=a         " 启用鼠标
+set clipboard=unnamedplus " 共享剪贴板
+
+" 缩进设置
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" 搜索设置
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" 基础键位映射
+let mapleader = " "
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
+" 提示
+echom "已加载 Vim 基础配置。如需完整体验，请使用 nvim。"

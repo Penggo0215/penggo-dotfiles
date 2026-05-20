@@ -24,10 +24,11 @@ rm -rf yazi.zip yazi-aarch64-unknown-linux-gnu
 MAC_HOME="/mnt/mac/Users/penggo"
 
 echo "创建配置文件软链接..."
-rm -f ~/.zshrc ~/.oh-my-zsh ~/.p10k.zsh
+rm -f ~/.zshrc ~/.oh-my-zsh ~/.p10k.zsh ~/.vimrc
 ln -s "$MAC_HOME/.zshrc" ~/.zshrc
 ln -s "$MAC_HOME/.oh-my-zsh" ~/.oh-my-zsh
 ln -s "$MAC_HOME/.p10k.zsh" ~/.p10k.zsh
+ln -s "$MAC_HOME/.vimrc" ~/.vimrc
 
 # 4. 切换默认 Shell 为 Zsh
 echo "切换默认 Shell 为 Zsh..."

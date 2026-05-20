@@ -48,6 +48,7 @@
 ```text
 .
 ├── nvim/      # Neovim 配置文件 (~/.config/nvim)
+├── vim/       # Vim 基础配置文件 (~/.vimrc)
 ├── ghostty/   # Ghostty 终端配置 (~/Library/Application Support/com.mitchellh.ghostty)
 ├── assets/    # 图标与预览图截图存放目录
 └── README.md
@@ -71,14 +72,16 @@ cd ~/dotfiles
 
 你可以使用以下原生命令手动链接：
 
-#### 🔗 链接 Neovim
+#### 🔗 链接 Neovim & Vim
 
 ```bash
 # 备份旧配置 (如果存在)
 mv ~/.config/nvim ~/.config/nvim.bak 2>/dev/null || true
+mv ~/.vimrc ~/.vimrc.bak 2>/dev/null || true
 
 # 创建软链接
 ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ```
 
 #### 🔗 链接 Ghostty (macOS)
