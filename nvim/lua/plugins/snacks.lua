@@ -37,8 +37,13 @@ return {
     },
     -- 启用窗口动画
     animate = { enabled = true },
-    -- 启用平滑滚动
-    scroll = { enabled = true },
+    -- 启用平滑滚动，调整参数以鼓励大跳转动画
+    scroll = { 
+      enabled = true,
+      animate = {
+        duration = { step = 15, total = 300 }, -- 增加 step 和 total 时间
+      },
+    },
     -- 启用并配置浮窗终端
     terminal = {
       win = {
