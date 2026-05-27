@@ -51,3 +51,8 @@ vim.keymap.set("v", ">", ">gv", { desc = "连续缩进 (右)" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "搜索居中" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "搜索居中" })
 vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "清除高亮" })
+
+
+
+-- Normal 模式下按回车在下方添加空行
+vim.keymap.set("n", "<CR>", "o<esc>", { desc = "下方插入空行" })
