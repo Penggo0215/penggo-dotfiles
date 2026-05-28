@@ -4,16 +4,18 @@ font-size = 15.5
 font-thicken = true
 adjust-cell-height = 3
 
-theme = Gruvbox Material Dark
+# Gruvbox Dark Theme
+config-file = auto/gruvbox-dark.ghostty
 
-background-image = "/Users/penggo/Documents/penggo/图片/E42260A6-C452-42BB-BF03-1A29424FA823_1_105_c.jpeg"
-background-image-fit = cover
-background-image-position = center
-background-image-opacity = 0.05
-# background-opacity = 0.96
-# background-blur-radius = 30
+# background-image = "/Users/penggo/Documents/penggo/图片/E42260A6-C452-42BB-BF03-1A29424FA823_1_105_c.jpeg"
+# background-image-fit = cover
+# background-image-position = center
+# background-image-opacity = 0.05
+background-opacity = 0.93
+background-blur = macos-glass-regular
 
 macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = transparent
 window-padding-x = 10
 window-padding-y = 10
 window-save-state = always
@@ -53,4 +55,3 @@ scrollback-limit = 25000000
 
 macos-icon = custom
 macos-custom-icon = /Users/penggo/dotfiles/ghostty/gruvbox-hard.icns
-

@@ -1,12 +1,18 @@
 return {
-  -- 使用官方最稳定的原版 codeium 插件
   {
-    "Exafunction/codeium.vim",
-    -- 移除延迟加载，确保打开编辑器时命令立即可用
-    lazy = false,
-    config = function()
-      -- 设置快捷键
-      vim.g.codeium_no_map_tab = false 
-    end,
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    build = ":Codeium Auth",
+    opts = {
+      enable_cmp_source = false,
+      virtual_text = {
+        enabled = true,
+        key_bindings = {
+          accept = "<M-l>", -- 你可以使用 Alt+l 来接受虚影建议
+        },
+      },
+    },
   },
 }
