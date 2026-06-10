@@ -58,14 +58,8 @@ return {
       },
       -- 优化源优先级，确保 LSP 和 Snippets 更有序
       sources = {
-        default = { "lsp", "path", "snippets", "buffer", "codeium" },
+        default = { "lsp", "path", "snippets", "buffer" },
         providers = {
-          codeium = {
-            name = "Codeium",
-            module = "codeium.blink",
-            score_offset = 100,
-            async = true,
-          },
           lsp = { score_offset = 4 },
           snippets = { score_offset = 3 },
           buffer = { score_offset = 1, min_keyword_length = 4 }, -- buffer 提示至少 4 个字符才触发，减少干扰

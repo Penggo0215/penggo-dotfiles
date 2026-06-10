@@ -1,17 +1,15 @@
 return {
   {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    build = ":Codeium Auth",
+    "supermaven-inc/supermaven-nvim",
+    event = "VeryLazy",
     opts = {
-      enable_cmp_source = false,
-      virtual_text = {
-        enabled = true,
-        key_bindings = {
-          accept = "<M-l>", -- 你可以使用 Alt+l 来接受虚影建议
-        },
+      keymaps = {
+        accept_suggestion = "<M-l>", -- 保持与你之前一致的 Alt+l / Option+l 采纳快捷键
+        clear_suggestion = "<M-]>",
+        accept_word = "<C-y>",
+      },
+      color = {
+        suggestion = "#808080", -- 灰色虚影提示
       },
     },
   },
