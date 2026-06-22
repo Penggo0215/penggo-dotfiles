@@ -12,7 +12,64 @@ return {
       },
     },
     -- 启用极速选择器 (可以替代 telescope/fzf)
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      -- 1. 定义自定义动作 (Actions)
+      -- 在自定义 Action 内部，第一个参数绝对且保证是 `picker` 实例对象本身，彻底解决参数 nil 报错
+      actions = {
+        -- 复制绝对路径
+        yank_absolute = function(picker)
+          local items = picker:selected({ fallback = true })
+          local paths = {}
+          for _, item in ipairs(items) do
+            if item.file then
+              table.insert(paths, item.file)
+            end
+          end
+          if #paths > 0 then
+            local val = table.concat(paths, "\n")
+            vim.fn.setreg("+", val) -- 写入系统剪贴板
+            vim.fn.setreg('"', val) -- 写入默认寄存器
+            Snacks.notify.info("已复制绝对路径:\n" .. val)
+          else
+            Snacks.notify.warn("未找到有效的文件路径")
+          end
+        end,
+
+        -- 复制相对路径 (相对于当前工作目录 CWD)
+        yank_relative = function(picker)
+          local items = picker:selected({ fallback = true })
+          local paths = {}
+          for _, item in ipairs(items) do
+            if item.file then
+              local rel = vim.fn.fnamemodify(item.file, ":.")
+              table.insert(paths, rel)
+            end
+          end
+          if #paths > 0 then
+            local val = table.concat(paths, "\n")
+            vim.fn.setreg("+", val) -- 写入系统剪贴板
+            vim.fn.setreg('"', val) -- 写入默认寄存器
+            Snacks.notify.info("已复制相对路径:\n" .. val)
+          else
+            Snacks.notify.warn("未找到有效的文件路径")
+          end
+        end,
+      },
+      -- 2. 把快捷键映射在 win.list.keys 级，在文件列表中精确拦截按键并执行
+      sources = {
+        explorer = {
+          win = {
+            list = {
+              keys = {
+                ["y"] = { "yank_relative", mode = { "n", "x" }, desc = "Yank relative path" },
+                ["Y"] = { "yank_absolute", mode = { "n", "x" }, desc = "Yank absolute path" },
+              },
+            },
+          },
+        },
+      },
+    },
     -- 启用漂亮的通知系统
     notifier = {
       enabled = true,

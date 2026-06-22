@@ -1,0 +1,58 @@
+gui:
+  showIcons: true
+  nerdFontsVersion: "3"
+  border: 'rounded'
+  sidePanelWidth: 0.33
+  mainPanelSplitMode: 'flexible'
+  commitAuthorShortLength: 2
+  mouseEvents: true
+  showRandomTip: false
+  showCommandLog: false
+  
+  # ==============================================================================
+  # 极致美化：Gruvbox Dark 配色方案
+  # 颜色对应用户 Neovim & Ghostty 的 Gruvbox 配置，达到完全一体化的视觉体验
+  # ==============================================================================
+  theme:
+    activeBorderColor:
+      - '#fabd2f'     # 黄色 (亮黄，对应当前活动面板)
+      - bold
+    inactiveBorderColor:
+      - '#504945'     # 暗灰 (与不活动面板完美契合)
+    searchingActiveBorderColor:
+      - '#fe8019'     # 橙色 (搜索时光标)
+      - bold
+    optionsTextColor:
+      - '#83a598'     # 蓝灰色 (底部操作指令文字)
+    selectedLineBgColor:
+      - '#3c3836'     # 深灰 (选中行的背景色，不刺眼且对比度优秀)
+    selectedRangeBgColor:
+      - '#3c3836'     # 选中区域背景
+    cherryPickedCommitBgColor:
+      - '#b8bb26'     # 绿色 (樱桃挑选的提交背景)
+    cherryPickedCommitFgColor:
+      - '#282828'     # 暗底色
+    unstagedChangesColor:
+      - '#fb4934'     # 红色 (未暂存的修改，非常醒目)
+    defaultFgColor:
+      - '#ebdbb2'     # 暖白 (前景色，保护眼睛)
+      
+  # ==============================================================================
+  # 作者颜色定制 (让协作与个人的提交一眼分明)
+  # ==============================================================================
+  authorColors:
+    'Penggo': '#8ec07c' # 青色/淡绿 (您自己的提交)
+    '*': '#928374'      # 暖灰 (其他协作成员的提交，保持背景干净)
+
+os:
+  editPreset: 'nvim'
+
+git:
+  # ==============================================================================
+  # 分页与 Diff 增强 (内置 pager 美化，若安装了 delta 可以进一步定制)
+  # ==============================================================================
+  pagers:
+    - colorArg: always
+  log:
+    order: 'topo-order'
+    showWholeGraph: true

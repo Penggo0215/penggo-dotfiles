@@ -22,3 +22,6 @@ vim.opt.background = "dark"
 if vim.g.vscode then
   vim.opt.spell = false
 end
+
+-- 始终以包含 .git 的项目最顶层目录作为根目录，避免因为子目录含 lua 文件夹（或 LSP 判定在二级子目录下）而被识别为 Root，从而始终打开最全的左侧菜单
+vim.g.root_spec = { { ".git" }, "lsp", "cwd" }
