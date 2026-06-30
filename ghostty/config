@@ -11,10 +11,10 @@ config-file = auto/gruvbox-dark.ghostty
 # background-image-fit = cover
 # background-image-position = center
 # background-image-opacity = 0.05
-# background-opacity = 0.92
-# background-blur = 20 
+background-opacity = 0.95
+background-blur-radius = 20
+macos-titlebar-style = transparent
 
-# macos-titlebar-style = transparent
 macos-titlebar-proxy-icon = hidden
 window-padding-x = 10
 window-padding-y = 10
