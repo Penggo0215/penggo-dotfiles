@@ -84,10 +84,19 @@ return {
 
         -- UI
         Visual = { bg = "#689d6a", fg = "#ebdbb2" },
-        CursorLine = { bg = "#3c3836" },
+        CursorLine = { bg = "#45403d" },
         LineNr = { fg = "#665c54" },
-        CursorLineNr = { fg = "#fabd2f" },
+        CursorLineNr = { fg = "#fabd2f", bold = true },
         MatchParen = { bg = "#928374", fg = "#ebdbb2", bold = true },
+
+        -- 列表/树形控件/选择器光标高亮优化 (Neo-tree, Snacks Picker, Quickfix, Blink等)
+        -- 使用更柔和的暗灰暖色 (#45403d)，去除粗体，保持克制、清晰且不抢眼
+        NeoTreeCursorLine = { bg = "#45403d" },
+        SnacksPickerListCursorLine = { bg = "#45403d" },
+        SnacksPickerCursorLine = { bg = "#45403d" },
+        BlinkCmpMenuSelection = { bg = "#45403d", fg = "#ebdbb2" },
+        PmenuSel = { bg = "#45403d", fg = "#ebdbb2" },
+        QuickFixLine = { bg = "#45403d" },
       },
     },
   },

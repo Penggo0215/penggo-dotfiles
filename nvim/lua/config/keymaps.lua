@@ -56,3 +56,6 @@ vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "清除高亮" })
 
 -- Normal 模式下按回车在下方添加空行
 vim.keymap.set("n", "<CR>", "o<esc>", { desc = "下方插入空行" })
+
+-- Cmd+S 快速保存 (Normal 和 Insert 模式)
+vim.keymap.set({ "n", "i" }, "<D-s>", "<cmd>w<cr>", { desc = "保存文件" })

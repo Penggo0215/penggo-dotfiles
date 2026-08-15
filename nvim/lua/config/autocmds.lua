@@ -63,3 +63,41 @@ set_transparent()
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = set_transparent,
 })
+
+-- 大文件/长文件性能优化：彻底解决 Treesitter 折叠计算在大文件上的卡顿问题
+local large_file_group = vim.api.nvim_create_augroup("LargeFilePerformance", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  group = large_file_group,
+  callback = function(args)
+    local bufnr = args.buf
+    local line_count = vim.api.nvim_buf_line_count(bufnr)
+    local file_path = vim.api.nvim_buf_get_name(bufnr)
+
+    local size = 0
+    if file_path and file_path ~= "" then
+      local ok, stats = pcall((vim.uv or vim.loop).fs_stat, file_path)
+      if ok and stats then
+        size = stats.size
+      end
+    end
+
+    -- 当行数超过 2000 行，或者文件大小超过 100KB 时触发优化
+    if line_count > 2000 or size > 100 * 1024 then
+      -- 1. 将折叠方式设为 manual（手动），避免光标移动时 Treesitter 频繁进行同步折叠计算
+      vim.opt_local.foldmethod = "manual"
+      vim.opt_local.foldexpr = ""
+
+      -- 2. 限制语法高亮的单行最大列数（防止单行过长造成的渲染卡顿）
+      vim.opt_local.synmaxcol = 300
+    end
+  end,
+})
+
+-- 禁用 htmldjango (Django HTML) 和 html 的保存自动格式化
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "htmldjango", "html" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
+
