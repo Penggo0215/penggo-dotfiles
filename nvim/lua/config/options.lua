@@ -5,6 +5,13 @@
 -- 始终保持光标上下有 10 行的距离
 vim.opt.scrolloff = 10
 
+-- 长行自然换行；续行标记置于缩进前，并保留足够的正文宽度
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+vim.opt.breakindentopt = "shift:2,min:40,sbr"
+vim.opt.showbreak = "↳ "
+
 -- 开启鼠标支持
 vim.opt.mouse = "a"
 
@@ -13,6 +20,12 @@ vim.opt.mousescroll = "ver:1,hor:1"
 
 -- 降低鼠标悬停触发延迟（默认 4000ms 太久，建议设为 500ms）
 vim.opt.updatetime = 500
+
+-- 关闭 Neovim 0.12+ 原生的 LSP 文档颜色装饰 (真正导致 Tailwind 色块的原因，
+-- 与 tailwindCSS LSP 设置无关，是 Neovim 核心 textDocument/documentColor 的内置渲染)
+if vim.lsp.document_color then
+  vim.lsp.document_color.enable(false)
+end
 
 -- 自定义诊断 (Diagnostics) 显示方式，使界面更清爽
 

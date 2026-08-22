@@ -14,12 +14,6 @@ return {
       },
       overrides = {
         -- ==========================================
-        -- 1. 基础环境 (Matches Cursor Background/Foreground)
-        -- ==========================================
-        Normal = { bg = "#282828", fg = "#ebdbb2" },
-        NormalFloat = { bg = "#282828", fg = "#ebdbb2" },
-        
-        -- ==========================================
         -- 2. 颜色映射 (Based on Cursor Screenshots)
         -- ==========================================
         
@@ -106,4 +100,7 @@ return {
       colorscheme = "gruvbox",
     },
   },
+  -- 未使用的配色方案，不需要安装
+  { "catppuccin/catppuccin", enabled = false },
+  { "folke/tokyonight.nvim", enabled = false },
 }

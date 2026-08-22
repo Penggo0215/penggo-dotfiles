@@ -14,6 +14,8 @@ return {
     -- 启用极速选择器 (可以替代 telescope/fzf)
     picker = {
       enabled = true,
+      -- 用选择器替代 vim.ui.select 的默认弹窗 (相当于替代 dressing.nvim)
+      ui_select = true,
       -- 1. 定义自定义动作 (Actions)
       -- 在自定义 Action 内部，第一个参数绝对且保证是 `picker` 实例对象本身，彻底解决参数 nil 报错
       actions = {
@@ -138,14 +140,15 @@ return {
     indent = { enabled = true },
     -- 启用当前作用域高亮
     scope = { enabled = true },
+    -- 用更美观的 vim.ui.input 弹窗替代默认命令行输入 (相当于替代 dressing.nvim)
+    input = { enabled = true },
+    -- 一体化状态列：合并 git 符号/折叠/诊断/行号，替代默认 statuscolumn
+    statuscolumn = { enabled = true },
   },
   keys = {
     -- Snacks Picker 常用快捷键
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
-    -- 浮窗终端快捷键
-    { "<leader>tt", function() Snacks.terminal() end, desc = "Toggle Terminal" },
-    { "<c-/>",      function() Snacks.terminal() end, desc = "Terminal" },
   },
 }

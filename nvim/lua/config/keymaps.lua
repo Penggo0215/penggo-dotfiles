@@ -46,13 +46,6 @@ vim.keymap.set("i", "jj", "<esc>", { desc = "退出插入模式" })
 
 -- 更多效率优化
 vim.keymap.set("v", "p", '"_dP', { desc = "粘贴不覆盖剪贴板" })
-vim.keymap.set("v", "<", "<gv", { desc = "连续缩进 (左)" })
-vim.keymap.set("v", ">", ">gv", { desc = "连续缩进 (右)" })
-vim.keymap.set("n", "n", "nzzzv", { desc = "搜索居中" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "搜索居中" })
-vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "清除高亮" })
-
-
 
 -- Normal 模式下按回车在下方添加空行
 vim.keymap.set("n", "<CR>", "o<esc>", { desc = "下方插入空行" })

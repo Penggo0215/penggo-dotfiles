@@ -27,22 +27,6 @@ local function set_transparent()
   end
 
   -- 调亮看不清的次要文本（针对 Monokai 透明背景优化）
-  -- 调亮 Telescope 中的目录路径和次要信息 (全面覆盖)
-  local telescope_groups = {
-    "TelescopeResultsDirectory",
-    "TelescopeResultsNormal",
-    "TelescopeResultsComment",
-    "TelescopeResultsSpecial",
-    "TelescopeResultsVariable",
-    "TelescopePathSeparator",
-  }
-  for _, group in ipairs(telescope_groups) do
-    vim.api.nvim_set_hl(0, group, { fg = "#bbbbbb", italic = false }) -- 使用更亮的浅灰色，取消斜体
-  end
-
-  -- 调亮文件名 (如果也觉得暗)
-  vim.api.nvim_set_hl(0, "TelescopeResultsFile", { fg = "#eeeeee", italic = false })
-
   -- 调亮注释和特殊非文本字符
   vim.api.nvim_set_hl(0, "Comment", { fg = "#aaaaaa", italic = false })
   vim.api.nvim_set_hl(0, "NonText", { fg = "#888888" })
