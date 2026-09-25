@@ -16,17 +16,27 @@ return {
     },
   },
 
-  -- 在状态栏显示文件大小，并将大箭头替换为小箭头
+  -- 在状态栏显示文件大小，极简风格：去掉所有分隔符箭头
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
       -- 插入文件大小组件
       table.insert(opts.sections.lualine_x, 1, "filesize")
 
-      -- 使用小巧的箭头（Nerd Fonts）替换巨大的默认箭头
-      -- 为右侧的箭头添加一个空格，防止它和文字挤在一起导致显示异常
-      opts.options.section_separators = { left = "", right = " " }
-      opts.options.component_separators = { left = "", right = " " }
+      -- 极简：完全去掉分隔符，靠区块背景色自然过渡
+      -- 每个组件自带 padding 间距，所以不额外加分隔符也很清晰
+      opts.options.section_separators = { left = "", right = "" }
+      opts.options.component_separators = { left = "", right = "" }
+
+      -- 右下角时钟：右侧 padding 防止贴边
+      opts.sections.lualine_z = {
+        {
+          function()
+            return " " .. os.date("%R")
+          end,
+          padding = { left = 1, right = 2 },
+        },
+      }
     end,
   },
 }

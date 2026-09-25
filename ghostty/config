@@ -1,8 +1,7 @@
-font-family = "JetBrainsMono Nerd Font"
-font-family = "PingFang SC"
-font-size = 15.8
-font-thicken = true
-adjust-cell-height = 3
+font-family = "JetBrains Maple Mono"
+font-size = 17.5
+font-thicken = false
+adjust-cell-height = 4
 
 # Gruvbox Dark Theme
 config-file = auto/gruvbox-dark.ghostty
@@ -11,13 +10,13 @@ config-file = auto/gruvbox-dark.ghostty
 # background-image-fit = cover
 # background-image-position = center
 # background-image-opacity = 0.05
-background-opacity = 0.94
+background-opacity = 0.92
 background-blur-radius = 30
 macos-titlebar-style = transparent
 macos-window-shadow = false
 macos-titlebar-proxy-icon = hidden
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 8
+window-padding-y = 8
 window-save-state = always
 window-colorspace = display-p3
 window-padding-balance = true
