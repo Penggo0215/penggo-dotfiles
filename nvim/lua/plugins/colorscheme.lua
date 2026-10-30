@@ -69,7 +69,6 @@ return {
         ["@lsp.type.property"] = { fg = "#83a598" },
 
         -- 其它
-        Comment = { fg = "#928374", italic = false },
         String = { fg = "#b8bb26" },
         Number = { fg = "#d3869b" },
         Boolean = { fg = "#d3869b" },
@@ -101,6 +100,6 @@ return {
     },
   },
   -- 未使用的配色方案，不需要安装
-  { "catppuccin/catppuccin", enabled = false },
+  { "catppuccin/nvim", enabled = false },
   { "folke/tokyonight.nvim", enabled = false },
 }

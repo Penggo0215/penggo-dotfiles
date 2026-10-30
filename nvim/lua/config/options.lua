@@ -27,10 +27,6 @@ if vim.lsp.document_color then
   vim.lsp.document_color.enable(false)
 end
 
--- 自定义诊断 (Diagnostics) 显示方式，使界面更清爽
-
--- 设置背景为暗色模式
-vim.opt.background = "dark"
 -- 如果在 VSCode (或 Cursor) 中运行，则关闭拼写检查，避免中文下出现波浪线
 if vim.g.vscode then
   vim.opt.spell = false

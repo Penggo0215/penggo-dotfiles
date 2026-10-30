@@ -1,4 +1,8 @@
-# <img src="assets/ghostty-icon.png" width="36" height="36" align="center"> Penggo's Dotfiles
+# <img src="assets/logo.png" width="36" height="36" align="center"> Penggo's Dotfiles
+
+<p align="center">
+  <img src="assets/logo.png" width="120" alt="Logo" />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/OS-macOS-000000?style=flat-square&logo=apple&logoColor=white" alt="OS" />
@@ -8,102 +12,106 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License" />
 </p>
 
-我的个人 macOS 开发环境配置，主打极速、简洁与高效。目前主要包含 **Neovim** 和 **Ghostty** 的配置。
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a>
+</p>
 
-## 📸 效果预览 (Screenshots)
+My personal macOS development environment — focused on speed, simplicity, and efficiency. Currently includes configurations for **Neovim** and **Ghostty**.
+
+## 📸 Screenshots
 
 | Neovim | Ghostty |
 | :---: | :---: |
 | ![Neovim Preview](assets/nvim-preview.png) | ![Ghostty Preview](assets/ghostty-preview.png) |
 
-## 🛠 包含的工具与配置
+## 🛠 Tools & Configs
 
-- **[Neovim](https://neovim.io/):** 高度定制的终端编辑器配置（使用 Lua 编写），旨在提供类似 IDE 的体验。
-- **[Ghostty](https://ghostty.org/):** GPU 加速的现代终端模拟器配置，包含自定义主题与着色器（Shaders）。
+- **[Neovim](https://neovim.io/):** A highly customized terminal editor config (written in Lua) designed to deliver an IDE-like experience.
+- **[Ghostty](https://ghostty.org/):** Config for the GPU-accelerated modern terminal emulator, with a custom theme and shaders.
 
-## ✨ 核心特性 (Key Features)
+## ✨ Key Features
 
-- 🚀 **极速启动**: 优化的 LazyVim 结构，秒开编辑器。
-- 💎 **现代美学**: 细致调整的 UI 元素，支持平滑滚动与光标特效。
-- ⌨️ **高效导航**: 基于 Blink.cmp 的补全引擎，极速且精准。
-- 🌈 **语法增强**: 完整的 Treesitter 支持，为各种语言提供完美的着色。
-- 🖥️ **GPU 渲染**: 利用 Ghostty 的硬件加速能力，配合自定义着色器（Shaders）。
-- 🛠️ **一键配置**: 易于安装与维护的软链接结构。
+- 🚀 **Blazing Fast Startup**: Optimized LazyVim structure — the editor opens in under a second.
+- 💎 **Modern Aesthetics**: Carefully tuned UI elements with smooth scrolling and cursor effects.
+- ⌨️ **Efficient Navigation**: A completion engine based on Blink.cmp — instant and precise.
+- 🌈 **Syntax Enhancement**: Full Treesitter support for perfect highlighting across languages.
+- 🖥️ **GPU Rendering**: Leverages Ghostty's hardware acceleration with custom shaders.
+- 🛠️ **One-Shot Setup**: An easy-to-install, easy-to-maintain symlink structure.
 
-## ⚙️ 技术栈 (Tech Stack)
+## ⚙️ Tech Stack
 
 ### [Neovim](https://neovim.io/) (v0.10+)
-- **基础框架**: [LazyVim](https://www.lazyvim.org/)
-- **补全引擎**: [Blink.cmp](https://github.com/Saghen/blink.cmp) - 新一代极速补全。
-- **文件树**: [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
-- **UI 组件**: [Bufferline](https://github.com/akinsho/bufferline.nvim), [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- **特效**: `smooth-effects` 支持平滑滚动效果。
+- **Framework**: [LazyVim](https://www.lazyvim.org/)
+- **Completion Engine**: [Blink.cmp](https://github.com/Saghen/blink.cmp) — the next-generation, ultra-fast completion engine.
+- **File Tree**: [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- **UI Components**: [Bufferline](https://github.com/akinsho/bufferline.nvim), [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+- **Effects**: `smooth-effects` for smooth scrolling.
 
 ### [Ghostty](https://ghostty.org/)
-- **终端模拟器**: GPU 加速，性能卓越。
-- **视觉增强**: 包含 `in-game-crt-cursor.glsl` 自定义着色器，提供独特的视觉反馈。
+- **Terminal Emulator**: GPU-accelerated with excellent performance.
+- **Visual Enhancements**: Includes the `in-game-crt-cursor.glsl` custom shader for unique visual feedback.
 
-## 📂 目录结构
+## 📂 Directory Structure
 
 ```text
 .
-├── nvim/      # Neovim 配置文件 (~/.config/nvim)
-├── vim/       # Vim 基础配置文件 (~/.vimrc)
-├── ghostty/   # Ghostty 终端配置 (~/Library/Application Support/com.mitchellh.ghostty)
-├── assets/    # 图标与预览图截图存放目录
+├── nvim/      # Neovim config (~/.config/nvim)
+├── vim/       # Basic Vim config (~/.vimrc)
+├── ghostty/   # Ghostty terminal config (~/Library/Application Support/com.mitchellh.ghostty)
+├── assets/    # Icons and preview screenshots
 └── README.md
 ```
 
-## ⚡️ 快速安装 (Installation)
+## ⚡️ Installation
 
-> [!WARNING]  
-> **警告：** 以下脚本将会覆盖你现有的配置，请在执行前备份自己的文件！
+> [!WARNING]
+> **Warning:** The steps below will overwrite your existing configuration. Back up your own files first!
 
-你可以通过 `git clone` 下载仓库，并使用软链接（Symlinks）将配置文件映射到系统中。
+Clone the repo and map the config files into place with symlinks.
 
-### 1. 克隆仓库
+### 1. Clone
 
 ```bash
 git clone https://github.com/penggo/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-### 2. 建立软链接 (Symlinking)
+### 2. Symlinking
 
-你可以使用以下原生命令手动链接：
+You can link things manually with the native commands below:
 
-#### 🔗 链接 Neovim & Vim
+#### 🔗 Link Neovim & Vim
 
 ```bash
-# 备份旧配置 (如果存在)
+# Back up old configs (if any)
 mv ~/.config/nvim ~/.config/nvim.bak 2>/dev/null || true
 mv ~/.vimrc ~/.vimrc.bak 2>/dev/null || true
 
-# 创建软链接
+# Create symlinks
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ```
 
-#### 🔗 链接 Ghostty (macOS)
+#### 🔗 Link Ghostty (macOS)
 
 ```bash
-# 备份并清理旧配置
+# Back up and clean up the old config
 GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
 mv "$GHOSTTY_DIR" "${GHOSTTY_DIR}.bak" 2>/dev/null || true
 
-# 创建软链接
+# Create the symlink
 ln -s ~/dotfiles/ghostty "$GHOSTTY_DIR"
 
-# 推荐同时在 ~/.config 下也做一个链接
+# Also link it under ~/.config (recommended)
 mkdir -p ~/.config/ghostty
 ln -s ~/dotfiles/ghostty/config ~/.config/ghostty/config
 ```
 
-## 🤝 贡献与反馈
+## 🤝 Contributing & Feedback
 
-这是我的个人配置，可能高度定制化并绑定了我的个人习惯。不过，如果你发现了 bug 或者有让它变得更好的建议，欢迎提交 Issues 或 Pull Requests！
+This is my personal setup — highly customized and tied to my own habits. That said, if you spot a bug or have an idea to make it better, Issues and Pull Requests are welcome!
 
-如果你觉得这套配置对你有帮助，欢迎点个 **Star** 🌟 鼓励一下！
+If this setup helps you, a **Star** 🌟 would be much appreciated!
 
 ## 📄 License
 

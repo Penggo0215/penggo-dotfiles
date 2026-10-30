@@ -1,6 +1,6 @@
 return {
   {
-    "barrett-ruth/import-cost.nvim",
+    "https://forge.barrettruth.com/barrettruth/import-cost.nvim",
     event = "BufRead",
     init = function()
       -- 新版 import-cost 插件不再需要 require().setup()，而是通过全局变量配置
